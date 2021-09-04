@@ -316,6 +316,10 @@ function registrarDatos(e) {
 }
 
 //---------------------modal carrito
-$("#carrito-toggle").click(() => {
-  $("#carrito-modal").toggle("fast");
+$(document).ready(function () {
+  $("#carrito-modal").hide();
+
+  $("#carrito-toggle").click(function () {
+    $("#carrito-modal").toggle("fast");
+  });
 });
