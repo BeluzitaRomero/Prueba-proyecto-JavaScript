@@ -54,6 +54,7 @@ nav {
 /*--------------------------------MODAL-------------------------------------*/
 /*CARRITO MODAL*/
 #carrito-modal {
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,7 +62,7 @@ nav {
   position: fixed;
   /* opacity: 0; */
   background-color: rgb(243, 217, 239);
-  width: 20%;
+  width: fit-content;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
@@ -254,10 +255,6 @@ button {
 
   padding: 2rem;
   border-radius: 1rem;
-  /* background: linear-gradient(
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0.3)
-  ); */
 }
 
 #mostrarTotal div {
@@ -267,4 +264,17 @@ button {
 /*---------------DOM------------------------*/
 .registro-uruario {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+  .logo {
+    width: 35rem;
+    margin: auto;
+  }
+  .logo-img {
+    width: 80%;
+  }
 }
