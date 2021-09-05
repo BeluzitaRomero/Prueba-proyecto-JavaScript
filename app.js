@@ -157,7 +157,7 @@ let imprimirTotal = document.createElement("p");
 //-----------------CREAR CARD TORTAS- PUSH AL CARRITO
 for (const prodTorta of tortas) {
   $(".container-card").append(`
-        <div class="card">
+        <div id=${prodTorta.id} class="card">
           <img
             class="img-card"
             src=${prodTorta.img}
@@ -166,7 +166,12 @@ for (const prodTorta of tortas) {
           <p class="descripcion"> ${prodTorta.name}</p>
           <p>$ ${prodTorta.precio}</p>
           <button id="btn${prodTorta.id}">Agregar al carrito</button>
-        </div>`);
+          <div>
+          <p id="animacion${prodTorta.id}agregada" class="agregado" style="display: none">Se agregó al carrito</p>
+          <p id="animacion${prodTorta.id}carrito" class="ver-carrito" style="display: none">Mira tu lista en el carrito</p>
+          </div>
+        </div>
+        `);
 
   //--------AGREGAR TORTAS AL CARRITO Y MOSTRAR SELECCION
   $(`#btn${prodTorta.id}`).on("click", function () {
@@ -199,12 +204,27 @@ for (const prodTorta of tortas) {
       }
     }
   });
+
+  //---------------------------ANIMACION-----------------------------------
+  $(`#btn${prodTorta.id}`).on("click", function () {
+    $(`#animacion${prodTorta.id}agregada`)
+      .css("color", "#9932cc", "text-align", "center")
+      .fadeIn(1000)
+      .delay(1000)
+      .fadeOut(1000);
+    $(`#animacion${prodTorta.id}carrito`)
+      .css("color", "#9932cc")
+      .css("text-align", "center")
+      .delay(3000)
+      .fadeIn(1000)
+      .fadeOut(1000);
+  });
 }
 
 //----------------CREAR CARD MINI-TORTA DESAYUNO - PUSH AL CARRITO
 for (const prodMiniTorta of desayunoMiniTorta) {
   $(".mini-tortas").append(`
-      <div class="card">
+      <div id=${prodMiniTorta.id} class="card">
         <img
           class="img-card"
           src=${prodMiniTorta.img}
@@ -213,6 +233,10 @@ for (const prodMiniTorta of desayunoMiniTorta) {
         <p class="descripcion">${prodMiniTorta.name}</p>
         <p>$ ${prodMiniTorta.precio}</p>
         <button id="btn${prodMiniTorta.id}">Agregar al carrito</button>
+        <div>
+          <p id="animacion${prodMiniTorta.id}agregada" class="agregado" style="display: none">Se agregó al carrito</p>
+          <p id="animacion${prodMiniTorta.id}carrito" class="ver-carrito" style="display: none">Mira tu lista en el carrito</p>
+          </div>
       </div>`);
 
   //------------ HACER PUSH AL CARRITO Y MOSTRAR SELECCION
@@ -246,12 +270,27 @@ for (const prodMiniTorta of desayunoMiniTorta) {
       }
     }
   });
+
+  //---------------------------ANIMACION-----------------------------------
+  $(`#btn${prodMiniTorta.id}`).on("click", function () {
+    $(`#animacion${prodMiniTorta.id}agregada`)
+      .css("color", "#9932cc", "text-align", "center")
+      .fadeIn(1000)
+      .delay(1000)
+      .fadeOut(1000);
+    $(`#animacion${prodMiniTorta.id}carrito`)
+      .css("color", "#9932cc")
+      .css("text-align", "center")
+      .delay(3000)
+      .fadeIn(1000)
+      .fadeOut(1000);
+  });
 }
 
 //----------------CREAR CARD ACOMPAÑAMENTO DESAYUNO --- PUSH AL CARRITO
 for (const prodAcompaniamiento of desayunoAcompaniamiento) {
   $(".acompañamiento").append(`
-      <div class="card">
+      <div id=${prodAcompaniamiento.id} class="card">
         <img
           class="img-card"
           src=${prodAcompaniamiento.img}
@@ -260,6 +299,10 @@ for (const prodAcompaniamiento of desayunoAcompaniamiento) {
         <p class="descripcion">${prodAcompaniamiento.name}</p>
         <p>$ ${prodAcompaniamiento.precio}</p>
         <button id="btn${prodAcompaniamiento.id}">Agregar al carrito</button>
+        <div>
+          <p id="animacion${prodAcompaniamiento.id}agregada" class="agregado" style="display: none">Se agregó al carrito</p>
+          <p id="animacion${prodAcompaniamiento.id}carrito" class="ver-carrito" style="display: none">Mira tu lista en el carrito</p>
+          </div>
       </div>`);
 
   // HACER PUSH AL CARRITO Y MOSTRAR SELECCION
@@ -295,6 +338,21 @@ for (const prodAcompaniamiento of desayunoAcompaniamiento) {
       }
     }
   }
+
+  //---------------------------ANIMACION-----------------------------------
+  $(`#btn${prodAcompaniamiento.id}`).on("click", function () {
+    $(`#animacion${prodAcompaniamiento.id}agregada`)
+      .css("color", "#9932cc", "text-align", "center")
+      .fadeIn(1000)
+      .delay(1000)
+      .fadeOut(1000);
+    $(`#animacion${prodAcompaniamiento.id}carrito`)
+      .css("color", "#9932cc")
+      .css("text-align", "center")
+      .delay(3000)
+      .fadeIn(1000)
+      .fadeOut(1000);
+  });
 }
 
 ///////////////CALCULO TOTAL Y STORAGE///////////////////

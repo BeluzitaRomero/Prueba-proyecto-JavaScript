@@ -159,12 +159,13 @@ nav {
 }
 
 button {
+  border-color: #9932cc2a;
   border-radius: 1rem;
   padding: 0.5rem;
   background-color: rgb(253, 232, 255);
   font-family: "montserrat";
   font-weight: 600;
-  color: darkorchid;
+  color: #9932cc;
   margin: 0.5rem;
 }
 
@@ -242,7 +243,7 @@ button {
 
 .descripcion {
   font-size: 0.8rem;
-  color: darkorchid;
+  color: #9932cc;
   font-weight: 600;
   margin-bottom: 0;
 }
