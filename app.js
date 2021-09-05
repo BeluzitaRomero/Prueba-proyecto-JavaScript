@@ -34,7 +34,7 @@ const desayunoAcompaniamiento = [
     id: 5,
     name: "alfajores frutos rojos",
     precio: 100,
-    img: "/imagenes/alfajor-frutos.jpg",
+    img: "./imagenes/alfajor-frutos.jpg",
     alt: "Alfajor centro frutos rojos",
   },
   {
