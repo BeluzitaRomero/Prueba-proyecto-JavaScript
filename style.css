@@ -295,4 +295,7 @@ tr:nth-child(even) {
   .logo-img {
     width: 80%;
   }
+  .card {
+    height: 20rem;
+  }
 }
