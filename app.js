@@ -144,10 +144,11 @@ class Cliente {
 
 const carrito = [];
 
-// Variables para numero en carrito
-// let totalEnCarrito = 1;
-// let cantidadProducto = document.getElementById("nro-carrito");
-// cantidadProducto.innerHTML = `<p id="nro-carrito">0</p>`;
+//Numero de productos en el carrito
+$(`#nro-carrito`).ready(function () {
+  let cantidadProducto = document.getElementById("nro-carrito");
+  cantidadProducto.innerHTML = `<p id="nro-carrito">${carrito.length}</p>`;
+});
 
 //--------------------------------------CREAR CARD TORTAS- PUSH AL CARRITO
 for (const prodTorta of tortas) {
@@ -158,20 +159,26 @@ for (const prodTorta of tortas) {
             src=${prodTorta.img}
             alt=${prodTorta.alt}
           />
-          <p class="descripcion">${prodTorta.name}</p>
+          <p class="descripcion"> ${prodTorta.name}</p>
           <p>$ ${prodTorta.precio}</p>
           <button id="btn${prodTorta.id}">Agregar al carrito</button>
         </div>`);
 
   //---------------------------------AGREGAR TORTAS AL CARRITO-
   $(`#btn${prodTorta.id}`).on("click", function () {
+    let contador = 0;
     //mostrar seleccion
     let listaTortas = document.getElementById("carrito-total");
     let tortaSelected = document.createElement("p");
     tortaSelected.innerHTML = `${prodTorta.name}  $${prodTorta.precio}`;
     listaTortas.append(tortaSelected);
-
     carrito.push(prodTorta);
+
+    //Numero de productos en el carrito
+    $(`#nro-carrito`).ready(function () {
+      let cantidadProducto = document.getElementById("nro-carrito");
+      cantidadProducto.innerHTML = `<p id="nro-carrito">${carrito.length}</p>`;
+    });
   });
 }
 
@@ -196,8 +203,13 @@ for (const prodMiniTorta of desayunoMiniTorta) {
     let miniTortaSelected = document.createElement("p");
     miniTortaSelected.innerHTML = `${prodMiniTorta.name}  $${prodMiniTorta.precio}`;
     listaDesayuno.appendChild(miniTortaSelected);
-
     carrito.push(prodMiniTorta);
+
+    //Numero de productos en el carrito
+    $(`#nro-carrito`).ready(function () {
+      let cantidadProducto = document.getElementById("nro-carrito");
+      cantidadProducto.innerHTML = `<p id="nro-carrito">${carrito.length}</p>`;
+    });
   });
 }
 
@@ -226,6 +238,12 @@ for (const prodAcompaniamiento of desayunoAcompaniamiento) {
     listaDesayuno.appendChild(acompaniamientoSelected);
 
     carrito.push(prodAcompaniamiento);
+
+    //Numero de productos en el carrito
+    $(`#nro-carrito`).ready(function () {
+      let cantidadProducto = document.getElementById("nro-carrito");
+      cantidadProducto.innerHTML = `<p id="nro-carrito">${carrito.length}</p>`;
+    });
   }
 }
 
@@ -301,14 +319,6 @@ function registrarDatos(e) {
   localStorage.setItem(1, JSON.stringify(cliente));
 
   console.log(JSON.parse(localStorage.getItem(1)));
-
-  //let suCarrito = localStorage.getItem("carrito");
-
-  //let clienteCart = cliente.listaCarrito(suCarrito);
-
-  //console.log(`Pedido realizado: ${clienteCart}`);
-
-  // Devolver el json a objeto y ver por consola
 
   formulario.reset();
 
