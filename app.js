@@ -355,31 +355,6 @@ for (const prodAcompaniamiento of desayunoAcompaniamiento) {
   });
 }
 
-///////////////CALCULO TOTAL Y STORAGE///////////////////
-
-// let botonPagar = document.getElementById("aPagar");
-// botonPagar.addEventListener("click", totalAPagar);
-
-// function totalAPagar() {
-//   let total = 0;
-
-//   for (const sumaCarrito of carrito) {
-//     total = total + sumaCarrito.precio;
-//     console.log(total);
-//   }
-
-//   imprimirTotal.innerHTML = `Total a pagar $${total}`;
-//   mostrarTotal.append(imprimirTotal);
-
-//   /////////////////////////////JSON////////////////////
-
-//   const carritoJSON = JSON.stringify(carrito);
-//   console.log(carritoJSON);
-
-//   ////////////////LOCAL STORAGE//////////////////////
-//   localStorage.setItem("carrito", carritoJSON);
-// }
-
 // MODAL DE REGISTRO DE USUARIO
 
 const abrirModal = document.getElementById("registrar-compra");
@@ -388,6 +363,7 @@ const cerrarModal = document.getElementById("cerrar-modal");
 
 abrirModal.addEventListener("click", () => {
   modalContainer.classList.add("show");
+  $("#carrito-modal").hide();
 });
 
 cerrarModal.addEventListener("click", modalClose);
@@ -430,6 +406,8 @@ function registrarDatos(e) {
   formulario.reset();
 
   modalClose();
+
+  location.reload();
 }
 
 //---------------------modal carrito
